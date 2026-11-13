@@ -16,6 +16,7 @@
 | Work | Paper |
 | --- | --- |
 | [**Latent Feedback Is a Compute and Data Amplifier**](works/latent_feedback/README.md) | [alphaXiv](https://www.alphaxiv.org/abs/2611.latent-feedback-transformers-scaling-law) |
+| ? | ? |
 
 ## Quickstart
 
