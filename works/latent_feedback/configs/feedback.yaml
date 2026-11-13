@@ -1,0 +1,9 @@
+# The latent feedback Transformer at p = 0.15, trained with one pass on 15% of the updates and two on the rest.
+base: base.yaml
+model:
+  instance: {name: feedback, passes: 2}
+eval:
+  variants: {passes: [1, 3, 4]}
+algo:
+  name: sampled_passes
+  pass_mix: [0.15, 0.85]

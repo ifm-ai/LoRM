@@ -1,0 +1,47 @@
+# The 134M Transformer recipe that every run shares; make_config.py fills in the size, the arm and the row of
+# runs.csv (learning rate, weight decay, batch, steps and the unique-data prefix).
+seed: 0
+output_dir: runs/transformer-134m
+tokenizer:
+  name: meta-llama/Llama-2-7b-hf
+  revision: 01c7f73d771dfac7d292323805ebc428287df4f9
+data:
+  name: dolma3-mix-150b-llama2-d3
+  cache_dir: data/d3  # the dataset repository's d3/, or python -m works.latent_feedback.data
+  sequence_length: 2048
+model:
+  vocab_size: 32000
+  dim: 768
+  n_layers: 12
+  n_heads: 6
+  n_kv_heads: 6
+  hidden_dim: 2048
+  max_seq_len: 2048
+optimizer:
+  lr: 0.016333374512377017
+  weight_decay: 0.0188
+  embedding_lr: 0.014783283043026053
+  head_lr: 0.0013066699609901615
+  embedding_weight_decay: 0.0
+  adamw: {betas: [0.9, 0.95], eps: 1.0e-08}
+  muon: {momentum: 0.95, momentum_start: 0.85, momentum_warmup_steps: 300, beta2: 0.95}
+  matrix_optimizer: lorm.train.optim.normuon:NorMuon
+train:
+  max_steps: 52624
+  batch_size: 32
+  gradient_accumulation: 1
+  lr_schedule: wsd
+  warmup_steps: 256
+  decay_steps: 10525
+  decay_type: linear
+  min_lr_ratio: 0.0
+  compile: blocks
+  log_every: 25
+  eval_every: 1000
+  checkpoint_every: 250
+  # Repeated epochs read the data in the first epoch's order.
+  reshuffle: false
+eval:
+  batch_size: 16
+  num_sequences: 4882
+wandb: {mode: disabled, project: lorm}
