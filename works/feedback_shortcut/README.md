@@ -6,7 +6,7 @@ a *stand-in*: zeros, the state of a multi-token prediction (MTP) head, or that s
 Pipelined correction then recomputes drafted positions in the calls that verify the next drafts. This folder trains
 the paper's models, and measures their quality, their served quality and their decoding speed.
 
-Paper: coming soon. Back to the [repository README](../../README.md).
+Paper: [alphaXiv](https://www.alphaxiv.org/abs/2611.feedback-shortcut-speculative-decoding). Back to the [repository README](../../README.md).
 
 | File | Contents |
 | --- | --- |
