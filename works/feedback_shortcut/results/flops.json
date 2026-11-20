@@ -1,0 +1,62 @@
+{
+ "135m transformer-mtp": {
+  "flops_per_token": 1388992927.0,
+  "extra": -0.09445629574981884,
+  "over_transformer": 1.0
+ },
+ "135m feedback": {
+  "flops_per_token": 1533877294.3600001,
+  "extra": 0.0,
+  "over_transformer": 1.104308930984211
+ },
+ "135m state-alignment": {
+  "flops_per_token": 1571282757.4,
+  "extra": 0.024386216014500084,
+  "over_transformer": 1.1312388471219337
+ },
+ "135m in-place": {
+  "flops_per_token": 1655832574.975,
+  "extra": 0.07950784659465526,
+  "over_transformer": 1.1921101560620113
+ },
+ "135m in-place-half": {
+  "flops_per_token": 1655832574.975,
+  "extra": 0.07950784659465526,
+  "over_transformer": 1.1921101560620113
+ },
+ "135m in-place-decay": {
+  "flops_per_token": 1558269304.0408454,
+  "extra": 0.0159021909839423,
+  "over_transformer": 1.121869862509995
+ },
+ "780m transformer-mtp": {
+  "flops_per_token": 6359106879.0,
+  "extra": -0.14152940730719976,
+  "over_transformer": 1.0
+ },
+ "780m feedback": {
+  "flops_per_token": 7407483649.559999,
+  "extra": 0.0,
+  "over_transformer": 1.1648622661182355
+ },
+ "780m state-alignment": {
+  "flops_per_token": 7557105501.719999,
+  "extra": 0.020198742142196524,
+  "over_transformer": 1.1883910186627324
+ },
+ "780m in-place": {
+  "flops_per_token": 7856311095.2699995,
+  "extra": 0.06059108152559478,
+  "over_transformer": 1.2354425306506944
+ },
+ "780m in-place-half": {
+  "flops_per_token": 7856311095.2699995,
+  "extra": 0.06059108152559478,
+  "over_transformer": 1.2354425306506944
+ },
+ "780m in-place-decay": {
+  "flops_per_token": 7497248533.674641,
+  "extra": 0.012118134627266297,
+  "over_transformer": 1.1789782238812785
+ }
+}

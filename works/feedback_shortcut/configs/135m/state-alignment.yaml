@@ -1,0 +1,5 @@
+# State alignment: a map pulls the MTP states toward the first-pass states; only the map trains on it.
+base: ../base.yaml
+output_dir: runs/state-alignment-135m
+model: {instance: {stand_in: state_alignment}}
+train: {branch_points: []}

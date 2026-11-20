@@ -1,0 +1,4 @@
+base: feedback.yaml
+output_dir: runs/state-alignment-780m
+model: {instance: {stand_in: state_alignment}}
+train: {branch_points: []}

@@ -1,0 +1,6 @@
+base: feedback.yaml
+output_dir: runs/transformer-mtp-780m
+model: {instance: {_replace: true, name: mtp, heads: 3, mtp_weight: 0.3}}
+train: {branch_points: []}
+eval: {variants: {_replace: true}}
+algo: {name: mtp, _replace: true}

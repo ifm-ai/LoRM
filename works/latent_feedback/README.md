@@ -14,8 +14,6 @@ Paper: [alphaXiv](https://www.alphaxiv.org/abs/2611.latent-feedback-transformers
 | `make_config.py` | The experiment YAML of a run in `runs.csv` |
 | `train.py` | Training entry point |
 | `data.py` | D3: Dolma 3 deduplicated, stratified and decontaminated against Paloma |
-| `measure/task_bpb.py` | Bits per byte of the gold answer on the Olmo 3 Base Easy tasks |
-| `measure/requests.py` | Those tasks' requests, built with OLMES |
 | `results/` | Paloma and task BPB of every released run |
 
 The latent feedback Transformer is the core feedback Transformer (`lorm/model/feedback.py`), trained with
@@ -88,8 +86,8 @@ V=data/d3/dolma3_val_000000.bin
 python -m lorm.eval.shards runs/feedback-134m-u100-f4 --data $V --out val.json --passes 1,4
 uv run python -m lorm.eval.paloma tokenize data/paloma && uv run python -m lorm.eval.paloma raw data/paloma
 python -m lorm.eval.shards runs/feedback-134m-u100-f4 --data data/paloma/raw/*.bin --out paloma.json --passes 4
-python -m works.latent_feedback.measure.task_bpb runs/feedback-134m-u100-f4 --requests data/task-bpb --out task_bpb
+python -m lorm.eval.task_bpb runs/feedback-134m-u100-f4 --requests data/task-bpb --out task_bpb
 ```
 
 The training log's `eval/nll@P4` is the validation loss at four passes, which matches token-by-token decoding; the
-paper reports it for latent feedback. `measure/requests.py` rebuilds the task requests.
+paper reports it for latent feedback. `lorm/eval/task_requests.py` rebuilds the task requests.

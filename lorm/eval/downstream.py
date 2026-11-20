@@ -67,9 +67,10 @@ def encode(tokenizer, context: str, continuation: str) -> tuple[list[int], list[
 
 
 @torch.no_grad()
-def score(model, pairs: list[tuple[list[int], list[int]]], length: int, batch: int, device,
+def score(model, pairs: list[tuple[list[int], list[int]]], length: int, batch: int, device, *, autocast: bool = True,
           **options) -> list[tuple[float, bool]]:
-    """Summed log-probability of each continuation and whether every token of it is the top prediction."""
+    """Summed log-probability of each continuation and whether every token of it is the top prediction; on CUDA under
+    bfloat16 autocast unless `autocast` is off."""
     results = [None] * len(pairs)
     order = sorted(range(len(pairs)), key=lambda i: -len(pairs[i][0]) - len(pairs[i][1]))
     for start in range(0, len(order), batch):
@@ -80,7 +81,7 @@ def score(model, pairs: list[tuple[list[int], list[int]]], length: int, batch: i
         tokens = torch.zeros(len(chunk), min(width, length), dtype=torch.long)
         for row, sequence in enumerate(sequences):
             tokens[row, :len(sequence)] = torch.tensor(sequence)
-        with torch.autocast(device.type, dtype=torch.bfloat16, enabled=device.type == "cuda"):
+        with torch.autocast(device.type, dtype=torch.bfloat16, enabled=autocast and device.type == "cuda"):
             logits = model(tokens.to(device), **options).float()
         logprobs = F.log_softmax(logits, -1)
         for row, i in enumerate(chunk):

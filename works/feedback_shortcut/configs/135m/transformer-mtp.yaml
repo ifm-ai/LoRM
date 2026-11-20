@@ -1,0 +1,7 @@
+# The Transformer without feedback, with the same three MTP heads, at the same rates.
+base: ../base.yaml
+output_dir: runs/transformer-mtp-135m
+model: {instance: {_replace: true, name: mtp, heads: 3, mtp_weight: 0.3}}
+train: {branch_points: []}
+eval: {variants: {_replace: true}}
+algo: {name: mtp, _replace: true}

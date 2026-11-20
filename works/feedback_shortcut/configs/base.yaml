@@ -1,0 +1,60 @@
+# The 135M feedback Transformer with three MTP heads (no stand-in training), as trained for the paper on 4 GPUs:
+# 4 GPUs x 32 sequences x 2 accumulation steps = 256 sequences of 2,048 tokens per update, 100 tokens per parameter.
+# Learning rates and weight decay are tuned for this model and shared by every setting.
+seed: 0
+output_dir: runs/feedback-135m
+tokenizer:
+  name: meta-llama/Llama-2-7b-hf
+  revision: 01c7f73d771dfac7d292323805ebc428287df4f9
+data:
+  name: dolma3-mix-150b-llama2
+  cache_dir: data/dolma3-llama2  # shards from python -m lorm.data.prepare_dolma3
+  sequence_length: 2048
+  num_shards: 136
+  num_sequences: 6548287
+model:
+  vocab_size: 32000
+  dim: 768
+  n_layers: 12
+  n_heads: 6
+  n_kv_heads: 6
+  hidden_dim: 2048
+  max_seq_len: 2048
+  instance:
+    name: mtp_feedback
+    heads: 3
+    mtp_weight: 0.3
+    passes: 2
+    stand_in: none
+optimizer:
+  lr: 0.008156384094181715
+  weight_decay: 0.05
+  embedding_lr: 0.007382316163788011
+  head_lr: 0.0006525107275345373
+  embedding_weight_decay: 0.0
+  adamw: {betas: [0.9, 0.95], eps: 1.0e-08}
+  muon: {momentum: 0.95, momentum_start: 0.85, momentum_warmup_steps: 300, beta2: 0.95}
+  matrix_optimizer: lorm.train.optim.normuon:NorMuon
+train:
+  max_steps: 25579
+  batch_size: 32
+  gradient_accumulation: 2
+  lr_schedule: wsd
+  warmup_steps: 256
+  decay_steps: 5116
+  decay_type: linear
+  min_lr_ratio: 0.0
+  compile: blocks
+  log_every: 25
+  eval_every: 1250
+  checkpoint_every: 250
+  # The decay-only arm branches here, where the decay starts.
+  branch_points: [20463]
+eval:
+  batch_size: 16
+  num_sequences: 4882
+  variants: {passes: [1, 3, 4]}
+algo:
+  name: mtp_sampled_passes
+  pass_mix: [0.31, 0.69]
+wandb: {mode: disabled, project: lorm}

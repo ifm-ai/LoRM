@@ -1,0 +1,46 @@
+{
+ "run": "state-alignment-780m-s1",
+ "stand_in": "state_alignment",
+ "precision": "float16",
+ "prompts": 140,
+ "new": 1024,
+ "greedy": {
+  "0": {
+   "departed": 123,
+   "at_risk": 21817,
+   "near_at_risk": 211,
+   "at_near": 69,
+   "served": -0.05868339796770152,
+   "exact": -0.05850753478130432
+  },
+  "1": {
+   "departed": 42,
+   "at_risk": 105888,
+   "near_at_risk": 530,
+   "at_near": 36,
+   "served": -0.047729425941638294,
+   "exact": -0.046592867062870594
+  },
+  "2": {
+   "departed": 14,
+   "at_risk": 132078,
+   "near_at_risk": 586,
+   "at_near": 12,
+   "served": -0.0448175868618169,
+   "exact": -0.03995101953790124
+  },
+  "3": {
+   "departed": 14,
+   "at_risk": 130416,
+   "near_at_risk": 568,
+   "at_near": 13,
+   "served": -0.03627176569508655,
+   "exact": -0.054656942774142535
+  }
+ },
+ "kl": {
+  "0": 0.015966333735449756,
+  "1": 0.0005853785782502316,
+  "2": 2.9549394095526535e-05
+ }
+}

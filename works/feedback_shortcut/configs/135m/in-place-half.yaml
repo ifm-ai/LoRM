@@ -1,0 +1,5 @@
+# In-place substitution in half the sequences of each multi-pass update.
+base: ../base.yaml
+output_dir: runs/in-place-half-135m
+model: {instance: {stand_in: in_place, share: 0.5}}
+train: {branch_points: []}

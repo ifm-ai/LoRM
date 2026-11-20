@@ -1,0 +1,6 @@
+# In-place substitution during the learning-rate decay only, branched from the feedback run where its decay starts.
+base: ../base.yaml
+output_dir: runs/in-place-decay-135m
+branch_from: runs/feedback-135m/checkpoint-step20463.pt
+model: {instance: {stand_in: in_place}}
+train: {branch_points: []}

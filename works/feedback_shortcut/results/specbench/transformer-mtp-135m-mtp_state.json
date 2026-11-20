@@ -1,0 +1,21 @@
+{
+ "run": "transformer-mtp-135m",
+ "stand_in": "mtp_state",
+ "temperature": 0,
+ "depths": {
+  "0": {
+   "speedup": {
+    "mt_bench": 2.36994575539347,
+    "translation": 2.162276762202963,
+    "summarization": 2.360825042468965,
+    "qa": 2.3336785147664156,
+    "math_reasoning": 2.2563252337688198,
+    "rag": 2.185641195154195,
+    "overall": 2.275647914906169
+   },
+   "tokens_per_call": 3.677371695178849,
+   "rho": null,
+   "identical": 1.0
+  }
+ }
+}

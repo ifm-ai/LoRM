@@ -1,0 +1,8 @@
+# The 780M feedback Transformer with three MTP heads, as trained for the paper on 16 GPUs:
+# 16 GPUs x 8 sequences x 2 accumulation steps = 256 sequences of 2,048 tokens per update, 100 tokens per parameter.
+base: ../base.yaml
+output_dir: runs/feedback-780m
+data: {num_shards: 779, num_sequences: 37981575}
+model: {dim: 1536, n_layers: 24, n_heads: 12, n_kv_heads: 12, hidden_dim: 4096}
+optimizer: {lr: 0.003053708934026328, embedding_lr: 0.002763901817626217, head_lr: 0.0002442967147221062}
+train: {max_steps: 148366, batch_size: 8, warmup_steps: 1484, decay_steps: 29673, eval_every: 7500, branch_points: [118693]}

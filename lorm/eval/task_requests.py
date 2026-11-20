@@ -4,9 +4,9 @@ JSONL per task with the context, continuation, gold label and ids. No model is l
 environment (github.com/allenai/olmes; the paper used commit 5a51f502d463b8cdc4a2dcad7d7096c41ff1197e), whose pins
 conflict with this repository's:
 
-    python works/latent_feedback/measure/requests.py --olmes OLMES_CHECKOUT --out data/task-bpb [TASK ...]
+    python lorm/eval/task_requests.py --olmes OLMES_CHECKOUT --out data/task-bpb [TASK ...]
 
-The dataset repository IFM/latent-feedback-data holds the request files the paper scored, under task-bpb/.
+The dataset repository IFM/latent-feedback-data holds the request files both papers scored, under task-bpb/.
 """
 
 import argparse

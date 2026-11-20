@@ -1,0 +1,46 @@
+{
+ "run": "transformer-mtp-780m-s2",
+ "precision": "float16",
+ "subsets": {
+  "c4_100_domains": {
+   "exact": {
+    "bpb": 0.8693687435032416
+   }
+  },
+  "dolma-v1_5": {
+   "exact": {
+    "bpb": 0.8725795669219854
+   }
+  },
+  "dolma_100_programing_languages": {
+   "exact": {
+    "bpb": 0.6342781560552906
+   }
+  },
+  "falcon-refinedweb": {
+   "exact": {
+    "bpb": 0.9695998740126043
+   }
+  },
+  "m2d2_s2orc_unsplit": {
+   "exact": {
+    "bpb": 0.829263382123544
+   }
+  },
+  "m2d2_wikipedia_unsplit": {
+   "exact": {
+    "bpb": 0.8498210831850161
+   }
+  },
+  "redpajama": {
+   "exact": {
+    "bpb": 0.8392934683144105
+   }
+  }
+ },
+ "mean": {
+  "exact": {
+   "bpb": 0.8377434677308704
+  }
+ }
+}

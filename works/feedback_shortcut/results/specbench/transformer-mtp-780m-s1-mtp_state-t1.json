@@ -1,0 +1,21 @@
+{
+ "run": "transformer-mtp-780m-s1",
+ "stand_in": "mtp_state",
+ "temperature": 1,
+ "depths": {
+  "0": {
+   "speedup": {
+    "mt_bench": 1.9003178489913417,
+    "translation": 1.814020272542839,
+    "summarization": 1.759219493655483,
+    "qa": 1.7715971362808562,
+    "math_reasoning": 1.9679231557415118,
+    "rag": 1.9634294986761347,
+    "overall": 1.8619923057180987
+   },
+   "tokens_per_call": 2.5859277831520346,
+   "rho": null,
+   "identical": 0.0
+  }
+ }
+}

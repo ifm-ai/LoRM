@@ -1,0 +1,63 @@
+{
+ "run": "feedback-780m",
+ "stand_in": "zeros",
+ "temperature": 1,
+ "depths": {
+  "0": {
+   "speedup": {
+    "mt_bench": 1.9512622775799124,
+    "translation": 1.7456422439124228,
+    "summarization": 1.800955886508127,
+    "qa": 1.7849751278905532,
+    "math_reasoning": 1.858872911832914,
+    "rag": 2.0120865968843082,
+    "overall": 1.854088822286396
+   },
+   "tokens_per_call": 2.588648537288834,
+   "rho": null,
+   "identical": 0.0
+  },
+  "1": {
+   "speedup": {
+    "mt_bench": 1.7021407438966412,
+    "translation": 1.715880869935455,
+    "summarization": 1.5310287968792262,
+    "qa": 1.7116745760738317,
+    "math_reasoning": 1.8797777189904878,
+    "rag": 1.9154210299078636,
+    "overall": 1.74050326241756
+   },
+   "tokens_per_call": 2.2708270275082345,
+   "rho": null,
+   "identical": 0.0
+  },
+  "2": {
+   "speedup": {
+    "mt_bench": 1.598076556794094,
+    "translation": 1.4953738145023179,
+    "summarization": 1.45396192334991,
+    "qa": 1.647955650821363,
+    "math_reasoning": 1.7104423928663455,
+    "rag": 1.8457299600271981,
+    "overall": 1.621056061474211
+   },
+   "tokens_per_call": 2.2070293006344905,
+   "rho": null,
+   "identical": 0.0
+  },
+  "3": {
+   "speedup": {
+    "mt_bench": 1.557566666555843,
+    "translation": 1.5211685321526378,
+    "summarization": 1.5810189362865674,
+    "qa": 1.663850602050094,
+    "math_reasoning": 1.7356368917358764,
+    "rag": 1.8278077967589248,
+    "overall": 1.6423520086695198
+   },
+   "tokens_per_call": 2.194791177033826,
+   "rho": null,
+   "identical": 0.0
+  }
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "run": "in-place-half-135m-s2",
+ "precision": "float16",
+ "subsets": {
+  "c4_100_domains": {
+   "exact": {
+    "bpb": 1.0310191258744406
+   }
+  },
+  "dolma-v1_5": {
+   "exact": {
+    "bpb": 1.0304684920470868
+   }
+  },
+  "dolma_100_programing_languages": {
+   "exact": {
+    "bpb": 0.7956422264861187
+   }
+  },
+  "falcon-refinedweb": {
+   "exact": {
+    "bpb": 1.1252920816504368
+   }
+  },
+  "m2d2_s2orc_unsplit": {
+   "exact": {
+    "bpb": 0.9624802249552968
+   }
+  },
+  "m2d2_wikipedia_unsplit": {
+   "exact": {
+    "bpb": 1.019638057075854
+   }
+  },
+  "redpajama": {
+   "exact": {
+    "bpb": 1.008059511494652
+   }
+  }
+ },
+ "mean": {
+  "exact": {
+   "bpb": 0.9960856742262694
+  },
+  "mtp_state": {
+   "corrected": 0.0010063642588308255,
+   "kept": 0.0028387368916723004
+  }
+ }
+}
