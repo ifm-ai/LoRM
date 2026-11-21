@@ -44,10 +44,10 @@ If LoRM helps your research, please cite the paper of the work you build on (lin
 repository:
 
 ```bibtex
-@misc{huang2026lorm,
-  title  = {LoRM: A Research Testbed for Looped Recurrent Language Models},
-  author = {Huang, Benhao},
-  year   = {2026},
-  url    = {https://github.com/ifm-ai/LoRM}
+@article{huang2026latent,
+  title={Latent Feedback Is a Compute and Data Amplifier},
+  author={Huang, Benhao and Dwivedi, Chaitanya and Ma, Xuezhe and Moreno, Alexander and Liu, Hector},
+  journal={arXiv preprint arXiv:2611.20404},
+  year={2026}
 }
 ```
