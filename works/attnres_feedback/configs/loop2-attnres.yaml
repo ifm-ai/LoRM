@@ -1,0 +1,4 @@
+# A 2x loop of the stack on AttnRes: the second visit reads the first visit's blocks; both visits train every update.
+base: transformer-attnres.yaml
+model:
+  instance: {feedback: blocks, feedback_map: identity, shift: 0, passes: 2, full_gradient: true}

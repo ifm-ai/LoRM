@@ -1,0 +1,4 @@
+# Latent feedback on AttnRes: the previous position's six blocks, each through W, as extra sources of every mix.
+base: feedback-attnres-top.yaml
+model:
+  instance: {feedback: blocks}

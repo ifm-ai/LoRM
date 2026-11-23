@@ -1,0 +1,4 @@
+# As feedback-attnres-blocks, with the blocks fed back unchanged: no RMSNorm, no W.
+base: feedback-attnres-blocks.yaml
+model:
+  instance: {feedback_map: identity}

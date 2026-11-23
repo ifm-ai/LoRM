@@ -1,0 +1,4 @@
+# As feedback-attnres-blocks, with each position reading its own earlier pass (a truncated 2x loop).
+base: feedback-attnres-blocks.yaml
+model:
+  instance: {shift: 0}

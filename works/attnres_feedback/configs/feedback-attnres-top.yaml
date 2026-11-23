@@ -1,0 +1,4 @@
+# Latent feedback on AttnRes: the previous position's output mix through W into the embedding (p = 0.15).
+base: ../../latent_feedback/configs/feedback.yaml
+model:
+  instance: {name: attnres, block_layers: 2, scaled_logits: true, feedback: top, passes: 2}

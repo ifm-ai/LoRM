@@ -17,6 +17,7 @@
 | --- | --- |
 | [**Latent Feedback Is a Compute and Data Amplifier**](works/latent_feedback/README.md) | [alphaXiv](https://www.alphaxiv.org/abs/2611.latent-feedback-transformers-scaling-law) |
 | [**Feedback Shortcut: Speculative Decoding for Latent Feedback Transformers**](works/feedback_shortcut/README.md) | [alphaXiv](https://www.alphaxiv.org/abs/2611.feedback-shortcut-speculative-decoding) |
+| [**Attention Residuals with Latent Feedback**](works/attnres_feedback/README.md) | [interactive map](https://huskydoge.github.io/attnres-feedback-map/) |
 
 ## Quickstart
 
